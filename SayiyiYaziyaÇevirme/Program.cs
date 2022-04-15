@@ -28,6 +28,7 @@ namespace SayiyiYaziyaÇevirme
             {
                 int maxBasamak = uzunluk % 3;
                 int maxIndis = uzunluk / 3;
+                    if(int.Parse(sayiString[i].ToString())!=0)
                 if (maxBasamak == 0)
                 yazi+=Yuzler(int.Parse(sayiString[i].ToString()));
                 if (maxBasamak == 2)
@@ -35,9 +36,10 @@ namespace SayiyiYaziyaÇevirme
                 if(maxBasamak==1)
                 yazi += Birler(int.Parse(sayiString[i].ToString()));
                 uzunluk--;
-               
+                    if (int.Parse(sayiString[i].ToString()) == 0)
+                        maxIndis = 0;
                 if ( i%3== x)
-                    yazi += degerler[maxIndis];
+                    yazi += degerler[maxIndis]+" ";
             }
             Console.WriteLine(yazi);
             }
@@ -55,7 +57,7 @@ namespace SayiyiYaziyaÇevirme
             string deger = "";
             if (sayi > 1)
                 deger = Birler(sayi);
-            return deger+" yüz";
+            return deger+" yüz ";
         }
     }
 }
